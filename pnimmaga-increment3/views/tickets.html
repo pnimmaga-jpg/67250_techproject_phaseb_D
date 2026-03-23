@@ -1,0 +1,75 @@
+<!DOCTYPE HTML>
+<html lang = "en">
+    <head>
+        <link rel="stylesheet" href="../static/style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>MonoMuse</title>
+        <meta name="author" content="Your name">
+        <meta name="keywords" content="Museum, Carnegie Mellon University, Information Systems">
+        <meta name="description" content="MonoMuse website redesign project">
+        <script defer src="../static/script.js" ></script>
+    </head>
+    <body onload="addYear()">
+        <div class="container">
+            <header class="header">
+                <img id="logo" src="../static/monomuselogo.png" alt="MonoMuse Museum Logo">
+            </header>
+            <nav class = "nav_bar">
+                <!-- the purpose of this SEMANTIC <div></div> element is to increase
+                readibility for both programmers and search engines -->
+                <ul>
+                    <li>
+                        <a href="../index.html">Home</a>
+                    </li>
+                    <li>
+                        <a href="explore.html">Explore</a>
+                    </li>
+                    <li>
+                        <a href="exhibitions.html">Exhibitions</a>
+                    </li>
+                    <li>
+                        <a id="navselected" href="tickets.html">Buy Tickets</a>
+                    </li>
+                    <li>
+                        <a href="checkout.html">Checkout</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Ticket Type</th>
+                    <th>Description</th>
+                    <th>$Price$</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Adult</td>
+                    <td>General admission for ages 18 and over. Under 18 free of charge.</td>
+                    <td>$18</td>
+                </tr>
+                <tr>
+                    <td>Student</td>
+                    <td>Student ID required</td>
+                    <td>$10</td>
+                </tr>
+                <tr>
+                    <td>Member</td>
+                    <td>Member ID required</td>
+                    <td>$15</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <footer>
+            <p id="copyYear"></p>
+        </footer>
+    </body>
+</html>
