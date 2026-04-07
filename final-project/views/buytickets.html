@@ -1,0 +1,91 @@
+<!DOCTYPE HTML>
+<html lang = "en">
+    <head>
+        <link rel="stylesheet" href="../static/style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>MonoMuse</title>
+        <meta name="author" content="Your name">
+        <meta name="keywords" content="Museum, Carnegie Mellon University, Information Systems">
+        <meta name="description" content="MonoMuse website redesign project">
+        <script defer src="../static/script.js" ></script>
+        <script src="https://code.jquery.com/jquery-4.0.0.min.js" integrity="sha256-OaVG6prZf4v69dPg6PhVattBXkcOWQB62pdZ3ORyrao=" crossorigin="anonymous"></script> <!-- jquery script -->
+    </head>
+    <body onload="addYear()">
+        <div class="container">
+            <header class="header">
+                <img id="logo" src="../static/monomuselogo.png" alt="MonoMuse Museum Logo">
+            </header>
+            <nav id="navbar" class = "nav_bar">
+                <!-- the purpose of this SEMANTIC <div></div> element is to increase
+                readibility for both programmers and search engines -->
+                <ul>
+                    <li>
+                        <a href="../index.html">Home</a>
+                    </li>
+                    <li>
+                        <a href="explore.html">Explore</a>
+                    </li>
+                    <li>
+                        <a href="exhibitions.html">Exhibitions</a>
+                    </li>
+                    <li>
+                        <a href="buytickets.html">Buy Tickets & Checkout</a>
+                    </li>
+                    <li><a href="javascript:void(0);" class="icon" onclick="ResponsiveNavBar()">&#9776;</a></li>
+                </ul>
+            </nav>
+            <main class="main">
+                <h2>Ticket Pricing</h2>
+                <ul>
+                    <li>Adult: $18</li>
+                    <li>Student: $10 (ID Required)</li>
+                    <li>Member: $15</li>
+                </ul>
+                <h2>Ticket Schedule</h2>
+                <table class="calendar">
+                    <thead>
+                        <tr>
+                            <th>Sun</th><th>Mon</th><th>Tue</th><th>Wed</th><th>Thu</th><th>Fri</th><th>Sat</th>
+                        </tr>
+                    </thead>
+                    <tbody id="calendar-body">
+                    </tbody>
+                </table>
+                <div id="ticketFormContainer">
+                    <h3>Complete Your Purchase</h3>
+                    <form id="purchaseForm">
+                        <label for="selectedDateDisplay">Selected Date:</label><br>
+                        <input type="text" id="selectedDateDisplay" name="selectedDate" readonly>
+                        <br>
+                        <label for="fname">Name:</label><br>
+                        <input type="text" id="fname" name="fname" required><br>
+                        
+                        <label for="femail">Email:</label><br>
+                        <input type="email" id="femail" name="femail" required><br>
+                        
+                        <label for="fquantity">Number of Tickets:</label><br>
+                        <input type="number" id="fquantity" name="fquantity" min="1" required><br>
+                        <label for="ticketType">Select Ticket Type:</label><br>
+                        <select id="ticketType" name="ticketType" required>
+                            <option value="">-- Please choose an option --</option>
+                            <option value="Adult">Adult : $18</option>
+                            <option value="Student">Student (ID required on entrance) - $10</option>
+                            <option value="Member">Member :) - $15</option>
+                        </select><br><br>
+                        <button type="submit" onclick="alert('Redirecting to payment system. \n(For my 67250 project, this does not do anything)')">Proceed to Payment Portal</button>
+                    </form>
+                </div>
+            </main>
+            <figure class="main_figure">
+                <!-- <img src="../static/homepage_image.png" alt="Monomuse Exterior" style="width: 500px;"> -->
+            </figure>
+            <footer class="footer">
+                <p id="copyYear"></p>
+            </footer>
+        </div>
+    </body>
+</html>

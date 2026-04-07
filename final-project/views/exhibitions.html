@@ -1,0 +1,64 @@
+<!DOCTYPE HTML>
+<html lang = "en">
+    <head>
+        <link rel="stylesheet" href="../static/style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>MonoMuse</title>
+        <meta name="author" content="Your name">
+        <meta name="keywords" content="Museum, Carnegie Mellon University, Information Systems">
+        <meta name="description" content="MonoMuse website redesign project">
+        <script defer src="../static/script.js" ></script>
+        <script src="https://code.jquery.com/jquery-4.0.0.min.js" integrity="sha256-OaVG6prZf4v69dPg6PhVattBXkcOWQB62pdZ3ORyrao=" crossorigin="anonymous"></script> <!-- jquery script -->
+    </head>
+    <body onload="addYear()">
+        <div class="container">
+            <header class="header">
+                <img id="logo" src="../static/monomuselogo.png" alt="MonoMuse Museum Logo">
+            </header>
+            <nav id="navbar" class = "nav_bar">
+                <!-- the purpose of this SEMANTIC <div></div> element is to increase
+                readibility for both programmers and search engines -->
+                <ul>
+                    <li>
+                        <a href="../index.html">Home</a>
+                    </li>
+                    <li>
+                        <a href="explore.html">Explore</a>
+                    </li>
+                    <li>
+                        <a href="exhibitions.html">Exhibitions</a>
+                    </li>
+                    <li>
+                        <a href="buytickets.html" id="buy-tickets-cta">Buy Tickets & Checkout</a>
+                    </li>
+                    <li><a href="javascript:void(0);" class="icon" onclick="ResponsiveNavBar()">&#9776;</a></li>
+                </ul>
+            </nav>
+            <main class="main">
+                <h3>
+                    Exhibition 1: Pulse Theory: The Architecture of Sound
+                </h3>
+                <p>
+                    Pulse Theory explores the structural foundations of electronic music, breaking down how rhythm, tempo, and frequency shape the way we experience sound. Through interactive installations and live demonstrations, visitors can engage with the building blocks of EDM, experimenting with beats and layers to understand how tracks evolve from simple patterns into complex, high-energy compositions.
+                </p>
+
+                <h3>
+                    Exhibition 2: After Hours: The Culture of the Underground
+                </h3>
+                <p>
+                    After Hours dives into the history and evolution of underground electronic music scenes, tracing their influence from hidden warehouse parties to global festival stages. Featuring visual media, curated soundscapes, and recreated club environments, the exhibition captures the raw energy and community-driven spirit that continue to define EDM culture today.
+                </p>
+            </main>
+            <figure class="main_figure">
+                <img src="../static/expic.png" alt="exhibition picture" style="width: 500px;">
+            </figure>
+            <footer class="footer">
+                <p id="copyYear"></p>
+            </footer>
+        </div>
+    </body>
+</html>
