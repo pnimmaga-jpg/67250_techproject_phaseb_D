@@ -41,11 +41,46 @@
                 </ul>
             </nav>
             <main class="main">
-                <h3>Exhibition 1: Digital Dreams: Art in the Age of Algorithms</h3>
-                <p>This exhibition explores how artists are using algorithms, artificial intelligence, and generative tools to create new forms of digital expression. Through interactive displays and dynamic visuals, visitors can see how machines and human creativity work together to produce art that evolves in real time.</p>
-
-                <h3>Exhibition 2: Code & Canvas: The Language of Creative Technology</h3>
-                <p>Code & Canvas highlights the ways programming has become a medium for artistic creation. Featuring works by digital artists and designers, the exhibition showcases installations, projections, and interactive pieces that reveal how lines of code can transform into immersive visual experiences.</p>
+                <h2>Ticket Pricing</h2>
+                <ul>
+                    <li>Adult: $18</li>
+                    <li>Student: $10 (ID Required)</li>
+                    <li>Member: $15</li>
+                </ul>
+                <h2>Ticket Schedule</h2>
+                <table class="calendar">
+                    <thead>
+                        <tr>
+                            <th>Sun</th><th>Mon</th><th>Tue</th><th>Wed</th><th>Thu</th><th>Fri</th><th>Sat</th>
+                        </tr>
+                    </thead>
+                    <tbody id="calendar-body">
+                    </tbody>
+                </table>
+                <div id="ticketFormContainer">
+                    <h3>Complete Your Purchase</h3>
+                    <form id="purchaseForm">
+                        <label for="selectedDateDisplay">Selected Date:</label><br>
+                        <input type="text" id="selectedDateDisplay" name="selectedDate" readonly style="background-color: #222; color: #92ad70; border: none;"><br><br>
+                        
+                        <label for="fname">Name:</label><br>
+                        <input type="text" id="fname" name="fname" required><br>
+                        
+                        <label for="femail">Email:</label><br>
+                        <input type="email" id="femail" name="femail" required><br>
+                        
+                        <label for="fquantity">Number of Tickets:</label><br>
+                        <input type="number" id="fquantity" name="fquantity" min="1" required><br>
+                        <label for="ticketType">Select Ticket Type:</label><br>
+                        <select id="ticketType" name="ticketType" required>
+                            <option value="">-- Please choose an option --</option>
+                            <option value="Adult">Adult : $18</option>
+                            <option value="Student">Student (ID required on entrance) - $10</option>
+                            <option value="Member">Member :) - $15</option>
+                        </select><br><br>
+                        <button type="submit" onclick="alert('Redirecting to payment system. \n(For my 67250 project, this does not do anything)')">Proceed to Payment Portal</button>
+                    </form>
+                </div>
             </main>
             <figure class="main_figure">
                 <!-- <img src="../static/homepage_image.png" alt="Monomuse Exterior" style="width: 500px;"> -->

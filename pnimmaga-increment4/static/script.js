@@ -58,7 +58,7 @@ L2 = ["Apple","Banana","Kiwi","Orange"];
     $("#longIntro").hide(); // Hide the long introduction text
     $("#readLess").hide();  // Hide the "Read Less" button itself
     $("#readMore").show();  // Show the "Read More" button  
-
+    $("#shortIntro").show();   // SHOW short version
   });
   
 // When the "Read More" button is clicked
@@ -66,17 +66,15 @@ L2 = ["Apple","Banana","Kiwi","Orange"];
     $("#longIntro").show();  // Show the long introduction text
     $("#readLess").show();   // Show the "Read Less" button
     $("#readMore").hide();   // Hide the "Read More" button  
+    $("#shortIntro").hide();   // HIDE short version so they don't stack
   });
 
 function addYear(){
     var now = new Date();
     console.log(now);
     var year = now.getFullYear();
-    document.getElementById("copyYear").innerHTML = "© " +  year + " MonoMuse. All rights reserved ";
+    document.getElementById("copyYear").innerHTML = "© " +  year + " The Music Room. All rights reserved ";
 }
-
-
-/* Sets the 'active' class on the navigation link that matches the current page URL.*/
 
 function ActiveNav() {
     // Get all navigation links
@@ -93,21 +91,21 @@ function ActiveNav() {
 }
 
 var now = new Date();
-var hour = now.getHour;
+var hour = now.getHours();
 
 function greeting(hour) {
     let message = "";
     if (hour < 5 || hour >= 20) {
-        message = "Good night and welcome to MonoMuse!";
+        message = "Good night and welcome to The Music Room!";
     } 
     else if (hour < 12) {
-        message = "Good morning and welcome to MonoMuse!";
+        message = "Good morning and welcome to The Music Room!";
     } 
     else if (hour < 18) {
-        message = "Good afternoon and welcome to MonoMuse!";
+        message = "Good afternoon and welcome to The Music Room!";
     } 
     else {
-        message = "Good evening and welcome to MonoMuse!";
+        message = "Good evening and welcome to The Music Room!";
     }
     document.getElementById("greeting").innerHTML = message;
 }
@@ -115,7 +113,77 @@ function greeting(hour) {
 addYear();
 
 if (document.getElementById("greeting")) {
-    greeting(now.hour);
+    greeting(hour);
 }
 
 ActiveNav();
+
+// Function to reveal the hidden purchase form
+function showTicketForm() {
+    const form = document.getElementById("ticketFormContainer");
+    if (form) {
+        form.style.display = "block"; // Makes the form appear
+        form.scrollIntoView({ behavior: 'smooth' }); // Visual polish
+    }
+}
+
+function generateCalendar() {
+    var calendarBody = document.getElementById("calendar-body");
+    if (!calendarBody) return;
+    const now = new Date();
+    const month = now.getMonth(); 
+    const year = now.getFullYear();
+    const monthNames = ["January", "February", "March", "April", "May", "June",
+                        "July", "August", "September", "October", "November", "December"];
+    
+    // Update heading
+    const scheduleHeader = document.querySelector(".main h2:last-of-type");
+    if (scheduleHeader) {
+        scheduleHeader.innerHTML = monthNames[month] + " " + year + " Ticket Schedule";
+    }
+
+    const firstDay = new Date(year, month, 1).getDay(); // Sunday=0, Monday=1, etc.
+    const daysInMonth = new Date(year, month + 1, 0).getDate();
+
+    calendarBody.innerHTML = "";
+    let date = 1;
+
+    for (let i = 0; i < 6; i++) {
+        let row = document.createElement("tr");
+        for (let j = 0; j < 7; j++) {
+            let cell = document.createElement("td");
+            
+            if (i === 0 && j < firstDay) {
+                // Properly aligns the 1st of the month
+                cell.innerHTML = "";
+                row.appendChild(cell);
+            } else if (date > daysInMonth) {
+                row.appendChild(cell);
+            } else {
+                // Pass the specific date string to the function
+                let dateString = `${monthNames[month]} ${date}, ${year}`;
+                cell.innerHTML = date + `<br><button class='buy-now' onclick="showTicketForm('${dateString}')">Buy Now</button>`;
+                date++;
+                row.appendChild(cell);
+            }
+        }
+        calendarBody.appendChild(row);
+        if (date > daysInMonth) break;
+    }
+}
+
+// Updated function to accept and display the selected date
+function showTicketForm(selectedDate) {
+    var formContainer = document.getElementById("ticketFormContainer");
+    var dateField = document.getElementById("selectedDateDisplay");
+    if (formContainer) {
+        formContainer.style.display = "block";
+        // Update the text field with the date clicked
+        if (dateField) {
+            dateField.value = selectedDate;
+        }
+    }
+}
+
+// Initial call
+generateCalendar();
