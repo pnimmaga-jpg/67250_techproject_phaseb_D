@@ -1,0 +1,72 @@
+<!DOCTYPE HTML>
+<html lang = "en">
+    <head>
+        <link rel="stylesheet" href="./static/style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>MonoMuse</title>
+        <meta name="author" content="Your name">
+        <meta name="keywords" content="Museum, Carnegie Mellon University, Information Systems">
+        <meta name="description" content="MonoMuse website redesign project">
+        <script defer src="./static/script.js" ></script>
+        <!-- defer to read body, then read src
+        script contains a lot of elements about the body; if browser reads
+        script, and in the script there are references to elements in the page,
+        it won't know what to do-->
+        <script src="https://code.jquery.com/jquery-4.0.0.min.js" integrity="sha256-OaVG6prZf4v69dPg6PhVattBXkcOWQB62pdZ3ORyrao=" crossorigin="anonymous"></script> <!-- jquery script -->
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+        <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    </head>
+    <body onload="addYear()"> <!-- onload loads it for each of them -->
+        <div class="container">
+            <header class="header">
+                <img id="logo" src="./static/monomuselogo.png" alt="MonoMuse Museum Logo">
+            </header>
+            <nav id="navbar" class = "nav_bar">
+                <!-- the purpose of this SEMANTIC <div></div> element is to increase
+                readibility for both programmers and search engines -->
+                <ul>
+                    <li>
+                        <a href="index.html">Home</a>
+                    </li>
+                    <li>
+                        <a href="views/explore.html">Explore</a>
+                    </li>
+                    <li>
+                        <a href="views/exhibitions.html">Exhibitions</a>
+                    </li>
+                    <li>
+                        <a href="views/buytickets.html">Buy Tickets & Checkout</a>
+                    </li>
+                    <li><a href="javascript:void(0);" class="icon" onclick="ResponsiveNavBar()">&#9776;</a>
+                    </li>
+                </ul>
+            </nav>
+            <main class="main">
+                <h2 id="greeting"></h2>
+
+                <p id="shortIntro">The Music Room is a Pittsburgh-based creative hub built around the pulse of electronic dance music, blending nightlife energy with daytime culture in a way that feels both immersive and accessible. What started as a small collective of DJs and producers has grown into a...</p>
+                
+                <button id="readMore">Read More</button>
+
+                <p id="longIntro">The Music Room is a Pittsburgh-based creative hub built around the pulse of electronic dance music, blending nightlife energy with daytime culture in a way that feels both immersive and accessible. What started as a small collective of DJs and producers has grown into a multifaceted space where music, technology, and community intersect. Inside, you’ll find a constantly evolving lineup of EDM-focused experiences, from live DJ sets and themed dance nights to production workshops, listening sessions, and experimental audio showcases. The atmosphere balances industrial grit with modern design, reflecting the city itself, while the programming leans into everything from house and techno to dubstep and ambient electronica. Whether someone is stepping in to learn the basics of mixing, connect with local artists, or lose themselves in a late-night set, The Music Room positions itself as both a launchpad for emerging talent and a gathering place for Pittsburgh’s electronic music scene.</p>
+                
+                <button id="readLess">Read Less</button>
+                <h3>Find Us in Pittsburgh! Check out our location below.</h3>
+                <div id="map"></div>
+                <p>
+                    Need help getting to the venue?<a href="https://maps.app.goo.gl/tQwr8PP1gM7y9MSi8" target="_blank">Find directions here.</a>
+                </p>
+            </main>
+            <figure class="main_figure">
+                <img class="home_image" src="./static/homepage_image.png" alt="Home Page Figure" style="width: 500px;">
+            </figure>
+            <footer class="footer">
+                <p id="copyYear"></p>
+            </footer>
+        </div>
+    </body>
+</html>

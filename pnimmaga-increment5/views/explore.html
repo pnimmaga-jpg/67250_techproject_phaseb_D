@@ -1,0 +1,74 @@
+<!DOCTYPE HTML>
+<html lang = "en">
+    <head>
+        <link rel="stylesheet" href="../static/style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>MonoMuse</title>
+        <meta name="author" content="Your name">
+        <meta name="keywords" content="Museum, Carnegie Mellon University, Information Systems">
+        <meta name="description" content="MonoMuse website redesign project">
+        <script defer src="../static/script.js" ></script>
+        <script src="https://code.jquery.com/jquery-4.0.0.min.js" integrity="sha256-OaVG6prZf4v69dPg6PhVattBXkcOWQB62pdZ3ORyrao=" crossorigin="anonymous"></script> <!-- jquery script -->
+    </head>
+    <body onload="addYear()">
+        <div class="container">
+            <header class="header">
+                <img id="logo" src="../static/monomuselogo.png" alt="MonoMuse Museum Logo">
+            </header>
+            <nav id="navbar" class = "nav_bar">
+                <!-- the purpose of this SEMANTIC <div></div> element is to increase
+                readibility for both programmers and search engines -->
+                <ul>
+                    <li>
+                        <a href="../index.html">Home</a>
+                    </li>
+                    <li>
+                        <a href="explore.html">Explore</a>
+                    </li>
+                    <li>
+                        <a href="exhibitions.html">Exhibitions</a>
+                    </li>
+                    <li>
+                        <a href="buytickets.html">Buy Tickets & Checkout</a>
+                    </li>
+                    <li><a href="javascript:void(0);" class="icon" onclick="ResponsiveNavBar()">&#9776;</a></li>
+                </ul>
+            </nav>
+            <main class="main">
+                <h2>Mission Statement</h2>
+                <p>The Music Room is dedicated to cultivating a dynamic space where electronic music, creativity, and community come together. Its mission is to inspire connection and self-expression by providing artists and audiences with opportunities to explore the full spectrum of EDM culture, from performance and production to innovation and collaboration. The Music Room aims to energize Pittsburgh’s creative scene while supporting the next generation of electronic musicians and enthusiasts.</p>
+                <h2>Milestones</h2>
+                <ul>
+                    <li>
+                        2024: Launch of the Artist Residency Program, providing emerging DJs and producers with studio access and live performance opportunities.
+                    </li>
+                    <li>
+                        2022: Expansion into a larger venue space, introducing a modular stage and immersive lighting system for enhanced live experiences.
+                    </li>
+                    <li>
+                        2020: Opening of The Music Room with its first series of underground EDM showcases featuring local Pittsburgh talent.
+                    </li>
+                </ul>
+            </main>
+            <figure class="main_figure">
+                <h3>New Venue Opening in the Hill District!</h3>
+                <div class="video-container">
+                    <iframe 
+                        src="https://www.youtube.com/embed/v1kuc4iAptQ" 
+                        title="Pittsburgh Music Venue Lineup" 
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen>
+                    </iframe>
+                </div>
+            </figure>
+            <footer class="footer">
+                <p id="copyYear"></p>
+            </footer>
+        </div>
+    </body>
+</html>
